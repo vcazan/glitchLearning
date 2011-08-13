@@ -1,7 +1,7 @@
 import org.json.*;
 import processing.serial.*;
 
-String baseURL = "http://api.glitch.com/simple/skills.listLearning?oauth_token=XXXXXXXXXXXXXXXXXX";
+String baseURL = "http://api.glitch.com/simple/skills.listLearning?oauth_token=cD0yOTczMiZzYz1yZWFkJnQ9MTMxMzE3MjAzOCZ1PTI5NzgzJmg9ODQ3ZjI5MDhkNjhmOTY0Yw";
 
 Serial arduino;  // Create object from Serial class
 

@@ -1,20 +1,44 @@
-import org.json.*;
-import processing.serial.*;
+import processing.core.*; 
+import processing.xml.*; 
 
-String baseURL = "http://api.glitch.com/simple/skills.listLearning?oauth_token=XXXXXXXXXXXXXXXXXX";
+import org.json.*; 
+import processing.serial.*; 
+
+import org.json.*; 
+
+import java.applet.*; 
+import java.awt.Dimension; 
+import java.awt.Frame; 
+import java.awt.event.MouseEvent; 
+import java.awt.event.KeyEvent; 
+import java.awt.event.FocusEvent; 
+import java.awt.Image; 
+import java.io.*; 
+import java.net.*; 
+import java.text.*; 
+import java.util.*; 
+import java.util.zip.*; 
+import java.util.regex.*; 
+
+public class glitchLearning extends PApplet {
+
+
+
+
+String baseURL = "http://api.glitch.com/simple/skills.listLearning?oauth_token=cD0yOTczMiZzYz1yZWFkJnQ9MTMxMzE3MjAzOCZ1PTI5NzgzJmg9ODQ3ZjI5MDhkNjhmOTY0Yw";
 
 Serial arduino;  // Create object from Serial class
 
 Boolean newReport = true;
 
 String lastName;
-void setup() {
+public void setup() {
   String listDev = Serial.list()[0];
   arduino = new Serial(this, listDev, 115200);
 
 }
 
-void draw() {
+public void draw() {
 
  println("Am I learning anything? " + isLearning());
   if (isLearning()){
@@ -26,7 +50,7 @@ delay(1000);
 
 
 
-boolean isLearning() {
+public boolean isLearning() {
   String request = baseURL;
   try {
     JSONObject fullResults = new JSONObject(join(loadStrings(request), ""));
@@ -41,7 +65,7 @@ boolean isLearning() {
   }
 }
 
-void getGlitchData() {
+public void getGlitchData() {
   
   String request = baseURL;
   try {
@@ -78,3 +102,7 @@ void getGlitchData() {
   }
 };
 
+  static public void main(String args[]) {
+    PApplet.main(new String[] { "--bgcolor=#FFFFFF", "glitchLearning" });
+  }
+}
